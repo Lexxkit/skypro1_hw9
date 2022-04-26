@@ -18,11 +18,12 @@ public class Library {
         System.out.println("The Library is full.");
     }
 
-    public void printBooks() {
+    public void printAllBooks() {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < books.length; i++) {
             if (books[i] != null) {
-                stringBuilder.append("\"" + books[i].getAuthor() + ": " + books[i].getName() + ": " + books[i].getYearPublished() + "\"\n");
+                stringBuilder.append(books[i]);
+                stringBuilder.append("\n");
             }
         }
         if (stringBuilder.length() > 0) {
@@ -31,5 +32,38 @@ public class Library {
         } else {
             System.out.println("The Library is empty!");
         }
+    }
+
+    private Book findBookByTitle(String title) {
+        for (Book book : books) {
+            if (book != null && book.getName().equals(title)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+    public void printBookByTitle(String title) {
+        Book book = findBookByTitle(title);
+        if (book == null) {
+            System.out.println("There is no book '" + title + "' in the library.");
+            return;
+        }
+        System.out.println(
+                book.getName() + " by " + book.getAuthor() + " was published in " + book.getYearPublished()
+        );
+    }
+
+    public void changeBookYearPublished(String title, int year) {
+        Book book = findBookByTitle(title);
+        if (book == null) {
+            System.out.println("There is no book '" + title + "' in the library.");
+            return;
+        }
+
+        int oldYear = book.getYearPublished();
+        book.setYearPublished(year);
+        System.out.println(book.getName() + " by " + book.getAuthor()
+                + " published year was changed from " + oldYear + " to " + book.getYearPublished());
     }
 }
