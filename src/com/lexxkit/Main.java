@@ -12,22 +12,31 @@ public class Main {
         Book harryPotter = new Book("Harry Potter and the Philosopher's Stone", rowling, 1996);
         Book dune = new Book("Dune", herbert, 1965);
 
-        System.out.println(harryPotter);
+        Library library = new Library(2);
+        library.printBooks();
 
-        harryPotter.setYearPublished(1997);
+        library.addBook(harryPotter);
+        library.addBook(dune);
+        library.printBooks();
 
-        System.out.println(harryPotter);
+        library.addBook(harryPotter);
 
-        System.out.println(dune);
-
-        Book[] books = new Book[10];
-        books[0] = harryPotter;
-        books[1] = dune;
-
-        System.out.println(Arrays.toString(books));
-        addBook(books, harryPotter);
-        System.out.println(Arrays.toString(books));
-        printBooks(books);
+//        System.out.println(harryPotter);
+//
+//        harryPotter.setYearPublished(1997);
+//
+//        System.out.println(harryPotter);
+//
+//        System.out.println(dune);
+//
+//        Book[] books = new Book[10];
+//        books[0] = harryPotter;
+//        books[1] = dune;
+//
+//        System.out.println(Arrays.toString(books));
+//        addBook(books, harryPotter);
+//        System.out.println(Arrays.toString(books));
+//        printBooks(books);
     }
 
     public static void addBook(Book[] books, Book newBook) {
