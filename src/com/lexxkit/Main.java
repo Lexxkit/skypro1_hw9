@@ -41,9 +41,7 @@ public class Main {
 
     public static void printBooks(Book[] books) {
         for (int i = 0; i < books.length; i++) {
-            if (books[i] == null) {
-                continue;
-            } else {
+            if (books[i] != null) {
                 System.out.println("\"" + books[i].getAuthor() + ": " + books[i].getName() + ": " + books[i].getYearPublished() + "\"");
             }
         }
