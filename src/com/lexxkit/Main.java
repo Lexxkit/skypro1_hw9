@@ -8,9 +8,11 @@ public class Main {
 
         Author rowling = new Author("Joanne", "K.Rowling");
         Author herbert = new Author("Frank", "Herbert");
+        Author rowling2 = new Author("Joanne", "Rowling");
 
         Book harryPotter = new Book("Harry Potter and the Philosopher's Stone", rowling, 1996);
         Book dune = new Book("Dune", herbert, 1965);
+        Book harryPotter2 = new Book("Harry Poter Pt.2", rowling, 1997);
 
         System.out.println(harryPotter);
 
@@ -20,30 +22,18 @@ public class Main {
 
         System.out.println(dune);
 
-        Book[] books = new Book[10];
-        books[0] = harryPotter;
-        books[1] = dune;
 
-        System.out.println(Arrays.toString(books));
-        addBook(books, harryPotter);
-        System.out.println(Arrays.toString(books));
-        printBooks(books);
-    }
-
-    public static void addBook(Book[] books, Book newBook) {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i] == null) {
-                books[i] = newBook;
-                return;
-            }
+        if (harryPotter.equals(harryPotter2)) {
+            System.out.println("Books are equal.");
+        } else {
+            System.out.println("Books are different.");
         }
-    }
 
-    public static void printBooks(Book[] books) {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i] != null) {
-                System.out.println("\"" + books[i].getAuthor() + ": " + books[i].getName() + ": " + books[i].getYearPublished() + "\"");
-            }
+        if (rowling.equals(rowling2)) {
+            System.out.println("This is the same author.");
+        } else {
+            System.out.println("Authors are different.");
+
         }
     }
 }
