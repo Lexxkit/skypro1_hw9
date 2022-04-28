@@ -1,5 +1,7 @@
 package com.lexxkit;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class Main {
 
         System.out.println(dune);
 
+
         if (harryPotter.equals(harryPotter2)) {
             System.out.println("Books are equal.");
         } else {
@@ -30,6 +33,7 @@ public class Main {
             System.out.println("This is the same author.");
         } else {
             System.out.println("Authors are different.");
+
         }
     }
 }
